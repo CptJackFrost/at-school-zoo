@@ -1,4 +1,7 @@
 package food;
 
-public class Food {
+//я без понятия, что тут должно быть описано
+
+public abstract class Food {
+
 }
