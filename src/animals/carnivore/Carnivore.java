@@ -2,7 +2,7 @@ package animals.carnivore;
 
 import animals.Animal;
 import food.Food;
-import food.meat.Meat;
+
 
 public abstract class Carnivore extends Animal {
 
@@ -13,7 +13,7 @@ public abstract class Carnivore extends Animal {
 
     @Override
     public boolean eat(Food food) {
-        if (food instanceof Meat) {
+        if (food.equals(Food.MEAT)) {
             return true;
         }
         else {

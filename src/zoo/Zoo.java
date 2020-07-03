@@ -5,8 +5,7 @@ import animals.carnivore.Eagle;
 import animals.carnivore.Lion;
 import animals.herbivore.Duck;
 import animals.herbivore.Giraffe;
-import food.herb.Grain;
-import food.meat.MeatChop;
+import food.Food;
 
 public class Zoo {
     public static void main(String[] args) {
@@ -28,8 +27,8 @@ public class Zoo {
         second.seeAnimals();
         second.removeAnimal("Кряква");
         second.seeAnimals();
-        second.feedAnimals(new Grain());
-        second.feedAnimals(new MeatChop());
+        second.feedAnimals(Food.GRAIN);
+        second.feedAnimals(Food.MEAT);
         System.out.println("--------------");
 
         third.addAnimal(new Giraffe("Кранчик"));
