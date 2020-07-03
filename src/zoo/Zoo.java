@@ -7,12 +7,25 @@ import animals.herbivore.Duck;
 import animals.herbivore.Giraffe;
 import food.Food;
 
+import java.util.Calendar;
+import java.util.GregorianCalendar;
+import java.util.StringTokenizer;
+
 public class Zoo {
     public static void main(String[] args) {
+
         Enclosure first = new Enclosure(3);
         Enclosure second = new Enclosure(2, "для уточек");
         Enclosure third = new Enclosure(4, "для травоядных");
         Enclosure fourth = new Enclosure(2, "для хищников");
+
+        StringTokenizer st = new StringTokenizer("Михаил Павлович Терентьев", " ");
+        System.out.println(st.nextToken() + " " + st.nextToken());
+        System.out.println(st.nextToken() + "\n");
+
+        GregorianCalendar calendar = new GregorianCalendar();
+        System.out.println("Запись от " + calendar.getTime());
+
 
         first.addAnimal(new Lion("Чук"));
         first.addAnimal(new Lion("Гек"));
@@ -47,6 +60,10 @@ public class Zoo {
         fourth.addAnimal(new Eagle("Лишний"));
         fourth.seeAnimals();
         System.out.println("--------------");
+
+
+        calendar.add(Calendar.DAY_OF_MONTH, 1);
+        System.out.println("\nЗавтрашняя дата: " + calendar.getTime());
 
 
     }
