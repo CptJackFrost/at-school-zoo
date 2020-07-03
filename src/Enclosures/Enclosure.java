@@ -17,7 +17,7 @@ public class Enclosure {
     private final String name;
 
     public Enclosure(int capacity) {
-        if (capacity <= 0){
+        if (capacity <= 0) {
             this.capacity = 1;
         } else {
             this.capacity = capacity;
@@ -68,28 +68,34 @@ public class Enclosure {
         if (animals.size() != 0) {
             int i;
             boolean isItHere = false;
-            for (Animal animal : animals){
-                if (animal.getName().equals(name)){
+            for (Animal animal : animals) {
+                if (animal.getName().equals(name)) {
                     i = animals.indexOf(animal);
                     isItHere = true;
                     removeAnimal(i);
                 }
             }
-            if (!isItHere){
+            if (!isItHere) {
                 System.out.println("А такого животного в этом вольере нет");
             }
         }
     }
 
     public void feedAnimals(Food food) {
+        boolean allAreFed = true;
         for (Animal animal : animals) {
-            if (!animal.eat(food)) {
+            try {
+                animal.eat(food);
+            } catch (IllegalArgumentException e) {
                 System.out.println(animal.getSpecies() + " не ест это");
+                allAreFed = false;
                 break;
-            } else {
-                System.out.println("Все животные наркомлены");
             }
         }
+        if (allAreFed) {
+            System.out.println("Все животные накормлены");
+        }
+
     }
 
     public void seeAnimals() {
@@ -104,15 +110,15 @@ public class Enclosure {
     }
 
     //передать можно кличку - или вид животного
-    public void poke(String animal){
+    public void poke(String animal) {
         boolean istItHere = false;
-        for (Animal habitat : animals){
-            if (habitat.getName().equals(animal) || habitat.getSpecies().equals(animal)){
+        for (Animal habitat : animals) {
+            if (habitat.getName().equals(animal) || habitat.getSpecies().equals(animal)) {
                 istItHere = true;
                 habitat.makeNoise();
             }
         }
-        if (!istItHere){
+        if (!istItHere) {
             System.out.println("А такого животного в этом вольере нет");
         }
     }

@@ -11,7 +11,7 @@ public class Zoo {
     public static void main(String[] args) {
         Enclosure first = new Enclosure(3);
         Enclosure second = new Enclosure(2, "для уточек");
-        Enclosure third = new Enclosure(4,"для травоядных");
+        Enclosure third = new Enclosure(4, "для травоядных");
         Enclosure fourth = new Enclosure(2, "для хищников");
 
         first.addAnimal(new Lion("Чук"));

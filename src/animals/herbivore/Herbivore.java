@@ -10,11 +10,12 @@ public abstract class Herbivore extends Animal {
         type = "Травоядное";
     }
 
+    @Override
     public boolean eat(Food food) {
         if (food.equals(Food.LEAFS) || food.equals(Food.GRAIN)) {
             return true;
         } else {
-            return false;
+            throw new IllegalArgumentException();
         }
     }
 

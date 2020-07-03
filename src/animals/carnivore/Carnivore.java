@@ -3,10 +3,9 @@ package animals.carnivore;
 import animals.Animal;
 import food.Food;
 
-
 public abstract class Carnivore extends Animal {
 
-    protected Carnivore(String name){
+    protected Carnivore(String name) {
         super(name);
         type = "Хищник";
     }
@@ -15,10 +14,8 @@ public abstract class Carnivore extends Animal {
     public boolean eat(Food food) {
         if (food.equals(Food.MEAT)) {
             return true;
-        }
-        else {
-            System.out.println(species + " это не ест");
-            return false;
+        } else {
+            throw new IllegalArgumentException();
         }
     }
 }

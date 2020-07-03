@@ -9,13 +9,13 @@ public abstract class Animal {
     protected String species;
     protected String noise;
 
-    public Animal(String name){
+    public Animal(String name) {
         this.name = name;
     }
 
     public abstract boolean eat(Food food);
 
-    public String getName(){
+    public String getName() {
         return this.name;
     }
 
@@ -23,11 +23,11 @@ public abstract class Animal {
         return type;
     }
 
-    public String getSpecies(){
+    public String getSpecies() {
         return species;
     }
 
-    public void makeNoise(){
+    public void makeNoise() {
         System.out.println(species + " " + name + ": " + noise);
     }
 
