@@ -6,12 +6,17 @@ import animals.carnivore.Lion;
 import animals.herbivore.Duck;
 import animals.herbivore.Giraffe;
 import food.Food;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.StringTokenizer;
 
 public class Zoo {
+
+    private static final Logger log = LogManager.getLogger();
+
     public static void main(String[] args) {
 
         Enclosure first = new Enclosure(3);
@@ -19,15 +24,16 @@ public class Zoo {
         Enclosure third = new Enclosure(4, "для травоядных");
         Enclosure fourth = new Enclosure(2, "для хищников");
 
-        StringTokenizer st = new StringTokenizer("Михаил Павлович Терентьев", " ");
+        /*StringTokenizer st = new StringTokenizer("Михаил Павлович Терентьев", " ");
         System.out.println(st.nextToken() + " " + st.nextToken());
-        System.out.println(st.nextToken() + "\n");
+        System.out.println(st.nextToken() + "\n");*/
 
         GregorianCalendar calendar = new GregorianCalendar();
-        System.out.println("Запись от " + calendar.getTime());
+        log.info("Запись от " + calendar.getTime());
+        log.error("второй лог");
 
 
-        first.addAnimal(new Lion("Чук"));
+        /*first.addAnimal(new Lion("Чук"));
         first.addAnimal(new Lion("Гек"));
         first.addAnimal(new Eagle("Крылан"));
         first.poke("Лев");
@@ -63,7 +69,7 @@ public class Zoo {
 
 
         calendar.add(Calendar.DAY_OF_MONTH, 1);
-        System.out.println("\nЗавтрашняя дата: " + calendar.getTime());
+        System.out.println("\nЗавтрашняя дата: " + calendar.getTime());*/
 
 
     }
