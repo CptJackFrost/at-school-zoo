@@ -2,10 +2,15 @@ package Enclosures;
 
 import animals.Animal;
 import food.Food;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.ArrayList;
 
+
+
 public class Enclosure {
+    private static final Logger log = LogManager.getLogger();
 
     /*
     Не понял по заданию, нужно ли создавать два разных класса вольеров,
@@ -87,7 +92,7 @@ public class Enclosure {
             try {
                 animal.eat(food);
             } catch (IllegalArgumentException e) {
-                System.out.println(animal.getSpecies() + " не ест это");
+                log.error(animal.getSpecies() + " не ест это");
                 allAreFed = false;
                 break;
             }

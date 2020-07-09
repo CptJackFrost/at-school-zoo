@@ -24,16 +24,16 @@ public class Zoo {
         Enclosure third = new Enclosure(4, "для травоядных");
         Enclosure fourth = new Enclosure(2, "для хищников");
 
-        /*StringTokenizer st = new StringTokenizer("Михаил Павлович Терентьев", " ");
+        StringTokenizer st = new StringTokenizer("Михаил Павлович Терентьев", " ");
         System.out.println(st.nextToken() + " " + st.nextToken());
-        System.out.println(st.nextToken() + "\n");*/
+        System.out.println(st.nextToken() + "\n");
 
         GregorianCalendar calendar = new GregorianCalendar();
         log.info("Запись от " + calendar.getTime());
         log.error("второй лог");
 
 
-        /*first.addAnimal(new Lion("Чук"));
+        first.addAnimal(new Lion("Чук"));
         first.addAnimal(new Lion("Гек"));
         first.addAnimal(new Eagle("Крылан"));
         first.poke("Лев");
@@ -69,7 +69,7 @@ public class Zoo {
 
 
         calendar.add(Calendar.DAY_OF_MONTH, 1);
-        System.out.println("\nЗавтрашняя дата: " + calendar.getTime());*/
+        System.out.println("\nЗавтрашняя дата: " + calendar.getTime());
 
 
     }
