@@ -89,7 +89,7 @@ public class Zoo {
         Writer writer = new FileWriter("save.json");
         GsonBuilder gson = new GsonBuilder();
         gson.registerTypeAdapter(Animal.class, new AnimalAdapter());
-        gson.create().toJson(enclosures, writer);
+        gson.setPrettyPrinting().create().toJson(enclosures, writer);
         writer.close();
     }
 

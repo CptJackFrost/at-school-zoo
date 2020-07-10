@@ -1,1 +1,116 @@
-[{"capacity":3,"animals":[{"classType":"Lion","classProperties":{"name":"Чук","type":"Хищник","species":"Лев","noise":"Roaaarrr"}},{"classType":"Lion","classProperties":{"name":"Гек","type":"Хищник","species":"Лев","noise":"Roaaarrr"}},{"classType":"Eagle","classProperties":{"name":"Крылан","type":"Хищник","species":"Орел","noise":"Фьююююю"}}],"name":""},{"capacity":2,"animals":[{"classType":"Duck","classProperties":{"name":"Брюква","type":"Травоядное","species":"Утка","noise":"Кря"}}],"name":"для уточек"},{"capacity":4,"animals":[{"classType":"Giraffe","classProperties":{"name":"Кранчик","type":"Травоядное","species":"Жираф","noise":"*Звук жирафа*"}},{"classType":"Giraffe","classProperties":{"name":"Башня","type":"Травоядное","species":"Жираф","noise":"*Звук жирафа*"}},{"classType":"Duck","classProperties":{"name":"Газетная","type":"Травоядное","species":"Утка","noise":"Кря"}},{"classType":"Duck","classProperties":{"name":"Безымянная","type":"Травоядное","species":"Утка","noise":"Кря"}}],"name":"для травоядных"},{"capacity":2,"animals":[{"classType":"Eagle","classProperties":{"name":"Сэм","type":"Хищник","species":"Орел","noise":"Фьююююю"}},{"classType":"Eagle","classProperties":{"name":"Сэм","type":"Хищник","species":"Орел","noise":"Фьююююю"}}],"name":"для хищников"}]
+[
+  {
+    "capacity": 3,
+    "animals": [
+      {
+        "classType": "Lion",
+        "classProperties": {
+          "name": "Чук",
+          "type": "Хищник",
+          "species": "Лев",
+          "noise": "Roaaarrr"
+        }
+      },
+      {
+        "classType": "Lion",
+        "classProperties": {
+          "name": "Гек",
+          "type": "Хищник",
+          "species": "Лев",
+          "noise": "Roaaarrr"
+        }
+      },
+      {
+        "classType": "Eagle",
+        "classProperties": {
+          "name": "Крылан",
+          "type": "Хищник",
+          "species": "Орел",
+          "noise": "Фьююююю"
+        }
+      }
+    ],
+    "name": ""
+  },
+  {
+    "capacity": 2,
+    "animals": [
+      {
+        "classType": "Duck",
+        "classProperties": {
+          "name": "Брюква",
+          "type": "Травоядное",
+          "species": "Утка",
+          "noise": "Кря"
+        }
+      }
+    ],
+    "name": "для уточек"
+  },
+  {
+    "capacity": 4,
+    "animals": [
+      {
+        "classType": "Giraffe",
+        "classProperties": {
+          "name": "Кранчик",
+          "type": "Травоядное",
+          "species": "Жираф",
+          "noise": "*Звук жирафа*"
+        }
+      },
+      {
+        "classType": "Giraffe",
+        "classProperties": {
+          "name": "Башня",
+          "type": "Травоядное",
+          "species": "Жираф",
+          "noise": "*Звук жирафа*"
+        }
+      },
+      {
+        "classType": "Duck",
+        "classProperties": {
+          "name": "Газетная",
+          "type": "Травоядное",
+          "species": "Утка",
+          "noise": "Кря"
+        }
+      },
+      {
+        "classType": "Duck",
+        "classProperties": {
+          "name": "Безымянная",
+          "type": "Травоядное",
+          "species": "Утка",
+          "noise": "Кря"
+        }
+      }
+    ],
+    "name": "для травоядных"
+  },
+  {
+    "capacity": 2,
+    "animals": [
+      {
+        "classType": "Eagle",
+        "classProperties": {
+          "name": "Сэм",
+          "type": "Хищник",
+          "species": "Орел",
+          "noise": "Фьююююю"
+        }
+      },
+      {
+        "classType": "Eagle",
+        "classProperties": {
+          "name": "Сэм",
+          "type": "Хищник",
+          "species": "Орел",
+          "noise": "Фьююююю"
+        }
+      }
+    ],
+    "name": "для хищников"
+  }
+]
