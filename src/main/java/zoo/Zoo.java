@@ -81,10 +81,10 @@ public class Zoo {
         calendar.add(Calendar.DAY_OF_MONTH, 1);
         System.out.println("\nЗавтрашняя дата: " + calendar.getTime());
 
-        enclosures.add(first);
-        enclosures.add(second);
-        enclosures.add(third);
-        enclosures.add(fourth);
+        enclosures.set(0, first);
+        enclosures.set(1, second);
+        enclosures.set(2, third);
+        enclosures.set(3, fourth);
 
         Writer writer = new FileWriter("save.json");
         GsonBuilder gson = new GsonBuilder();
