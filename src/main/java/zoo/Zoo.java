@@ -2,10 +2,10 @@ package zoo;
 
 import Enclosures.Enclosure;
 import animals.Animal;
-import animals.carnivore.Eagle;
-import animals.carnivore.Lion;
-import animals.herbivore.Duck;
-import animals.herbivore.Giraffe;
+import animals.Eagle;
+import animals.Lion;
+import animals.Duck;
+import animals.Giraffe;
 import com.google.gson.*;
 import food.Food;
 import org.apache.logging.log4j.LogManager;
@@ -23,10 +23,8 @@ public class Zoo {
 
     public static void main(String[] args) throws IOException {
 
-        Gson gson = new Gson();
-        Reader reader = new FileReader("save.json");
-        Enclosure first = gson.fromJson(reader, Enclosure.class);
-
+        Enclosure first = load();
+        //Enclosure first = new Enclosure(3);
 
 
         Enclosure second = new Enclosure(2, "для уточек");
@@ -81,11 +79,20 @@ public class Zoo {
         System.out.println("\nЗавтрашняя дата: " + calendar.getTime());
 
         Writer writer = new FileWriter("save.json");
-        gson.toJson(first, writer);
+        GsonBuilder gson = new GsonBuilder();
+        gson.registerTypeAdapter(Animal.class, new AnimalAdapter());
+        gson.create().toJson(first, writer);
         writer.close();
     }
 
-    private class AnimalAdapter implements JsonSerializer<Animal>, JsonDeserializer<Animal> {
+    private static Enclosure load() throws FileNotFoundException {
+        GsonBuilder gson = new GsonBuilder();
+        Reader reader = new FileReader("save.json");
+        gson.registerTypeAdapter(Animal.class, new AnimalAdapter());
+        return gson.create().fromJson(reader, Enclosure.class);
+    }
+
+    private static class AnimalAdapter implements JsonSerializer<Animal>, JsonDeserializer<Animal> {
 
         @Override
         public JsonElement serialize(Animal src, Type typeOfSrc, JsonSerializationContext context) {

@@ -1,22 +1,21 @@
-package animals.herbivore;
+package animals;
 
 import animals.Animal;
 import food.Food;
 
-public abstract class Herbivore extends Animal {
+public abstract class Carnivore extends Animal {
 
-    public Herbivore(String name) {
+    public Carnivore(String name) {
         super(name);
-        type = "Травоядное";
+        type = "Хищник";
     }
 
     @Override
     public boolean eat(Food food) {
-        if (food.equals(Food.LEAFS) || food.equals(Food.GRAIN)) {
+        if (food.equals(Food.MEAT)) {
             return true;
         } else {
             throw new IllegalArgumentException();
         }
     }
-
 }

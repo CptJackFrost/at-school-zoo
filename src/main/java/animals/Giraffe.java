@@ -1,4 +1,4 @@
-package animals.herbivore;
+package animals;
 
 public final class Giraffe extends Herbivore {
 

@@ -70,12 +70,13 @@ public class Enclosure {
 
     //а эта перегрузка уберет из вольера животнное с конкретной кличкой
     public void removeAnimal(String name) {
+        ArrayList<Animal> copy = new ArrayList(animals);
         if (animals.size() != 0) {
             int i;
             boolean isItHere = false;
-            for (Animal animal : animals) {
+            for (Animal animal : copy) {
                 if (animal.getName().equals(name)) {
-                    i = animals.indexOf(animal);
+                    i = copy.indexOf(animal);
                     isItHere = true;
                     removeAnimal(i);
                 }

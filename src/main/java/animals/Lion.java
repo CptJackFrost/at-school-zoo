@@ -1,4 +1,4 @@
-package animals.carnivore;
+package animals;
 
 public final class Lion extends Carnivore {
 
