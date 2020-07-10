@@ -7,12 +7,14 @@ import animals.Lion;
 import animals.Duck;
 import animals.Giraffe;
 import com.google.gson.*;
+import com.google.gson.reflect.TypeToken;
 import food.Food;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.io.*;
 import java.lang.reflect.Type;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.StringTokenizer;
@@ -23,13 +25,14 @@ public class Zoo {
 
     public static void main(String[] args) throws IOException {
 
-        Enclosure first = load();
-        //Enclosure first = new Enclosure(3);
+
+        ArrayList<Enclosure> enclosures = load();
 
 
-        Enclosure second = new Enclosure(2, "для уточек");
-        Enclosure third = new Enclosure(4, "для травоядных");
-        Enclosure fourth = new Enclosure(2, "для хищников");
+        Enclosure first = enclosures.get(0);
+        Enclosure second = enclosures.get(1);
+        Enclosure third = enclosures.get(2);
+        Enclosure fourth = enclosures.get(3);
 
 
         StringTokenizer st = new StringTokenizer("Михаил Павлович Терентьев", " ");
@@ -40,9 +43,9 @@ public class Zoo {
         log.info("Запись от " + calendar.getTime());
         log.error("второй лог");
 
-        /*first.addAnimal(new Lion("Чук"));
+        first.addAnimal(new Lion("Чук"));
         first.addAnimal(new Lion("Гек"));
-        first.addAnimal(new Eagle("Крылан"));*/
+        first.addAnimal(new Eagle("Крылан"));
         first.poke("Лев");
         first.poke("Крылан");
         first.poke("Орангутан");
@@ -78,18 +81,25 @@ public class Zoo {
         calendar.add(Calendar.DAY_OF_MONTH, 1);
         System.out.println("\nЗавтрашняя дата: " + calendar.getTime());
 
+        enclosures.add(first);
+        enclosures.add(second);
+        enclosures.add(third);
+        enclosures.add(fourth);
+
         Writer writer = new FileWriter("save.json");
         GsonBuilder gson = new GsonBuilder();
         gson.registerTypeAdapter(Animal.class, new AnimalAdapter());
-        gson.create().toJson(first, writer);
+        gson.create().toJson(enclosures, writer);
         writer.close();
     }
 
-    private static Enclosure load() throws FileNotFoundException {
+    private static ArrayList<Enclosure> load() throws FileNotFoundException {
+        Type listOfEnclosures = new TypeToken<ArrayList<Enclosure>>(){}.getType();
         GsonBuilder gson = new GsonBuilder();
         Reader reader = new FileReader("save.json");
         gson.registerTypeAdapter(Animal.class, new AnimalAdapter());
-        return gson.create().fromJson(reader, Enclosure.class);
+        ArrayList<Enclosure> output = gson.create().fromJson(reader, listOfEnclosures);
+        return output;
     }
 
     private static class AnimalAdapter implements JsonSerializer<Animal>, JsonDeserializer<Animal> {
