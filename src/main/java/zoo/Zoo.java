@@ -1,14 +1,18 @@
 package zoo;
 
 import Enclosures.Enclosure;
+import animals.Animal;
 import animals.carnivore.Eagle;
 import animals.carnivore.Lion;
 import animals.herbivore.Duck;
 import animals.herbivore.Giraffe;
+import com.google.gson.*;
 import food.Food;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.io.*;
+import java.lang.reflect.Type;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.StringTokenizer;
@@ -17,12 +21,18 @@ public class Zoo {
 
     private static final Logger log = LogManager.getLogger();
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
-        Enclosure first = new Enclosure(3);
+        Gson gson = new Gson();
+        Reader reader = new FileReader("save.json");
+        Enclosure first = gson.fromJson(reader, Enclosure.class);
+
+
+
         Enclosure second = new Enclosure(2, "для уточек");
         Enclosure third = new Enclosure(4, "для травоядных");
         Enclosure fourth = new Enclosure(2, "для хищников");
+
 
         StringTokenizer st = new StringTokenizer("Михаил Павлович Терентьев", " ");
         System.out.println(st.nextToken() + " " + st.nextToken());
@@ -32,10 +42,9 @@ public class Zoo {
         log.info("Запись от " + calendar.getTime());
         log.error("второй лог");
 
-
-        first.addAnimal(new Lion("Чук"));
+        /*first.addAnimal(new Lion("Чук"));
         first.addAnimal(new Lion("Гек"));
-        first.addAnimal(new Eagle("Крылан"));
+        first.addAnimal(new Eagle("Крылан"));*/
         first.poke("Лев");
         first.poke("Крылан");
         first.poke("Орангутан");
@@ -71,7 +80,37 @@ public class Zoo {
         calendar.add(Calendar.DAY_OF_MONTH, 1);
         System.out.println("\nЗавтрашняя дата: " + calendar.getTime());
 
-
+        Writer writer = new FileWriter("save.json");
+        gson.toJson(first, writer);
+        writer.close();
     }
+
+    private class AnimalAdapter implements JsonSerializer<Animal>, JsonDeserializer<Animal> {
+
+        @Override
+        public JsonElement serialize(Animal src, Type typeOfSrc, JsonSerializationContext context) {
+            JsonObject result = new JsonObject();
+            result.add("classType", new JsonPrimitive(src.getClass().getSimpleName()));
+            result.add("classProperties", context.serialize(src, src.getClass()));
+            return result;
+        }
+
+
+        @Override
+        public Animal deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context)
+                throws JsonParseException {
+            JsonObject jsonObject = json.getAsJsonObject();
+            String type = jsonObject.get("classType").getAsString();
+            JsonElement element = jsonObject.get("classProperties");
+
+            try {
+                String thePackage = "animals.";
+                return context.deserialize(element, Class.forName(thePackage + type));
+            } catch (ClassNotFoundException cnfe) {
+                throw new JsonParseException("Unknown element type: " + type, cnfe);
+            }
+        }
+    }
+
 }
 

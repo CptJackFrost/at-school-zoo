@@ -1,3 +1,39 @@
 2020-07-09 14:56:10,743 INFO z.Zoo [main] Запись от Thu Jul 09 14:56:10 YEKT 2020
 2020-07-09 14:56:10,748 ERROR z.Zoo [main] второй лог
 2020-07-09 14:56:10,750 ERROR E.Enclosure [main] Утка не ест это
+2020-07-09 21:08:02,272 INFO z.Zoo [main] Запись от Thu Jul 09 21:08:02 YEKT 2020
+2020-07-09 21:08:02,289 ERROR z.Zoo [main] второй лог
+2020-07-09 21:08:02,290 ERROR E.Enclosure [main] Утка не ест это
+2020-07-09 21:10:31,216 INFO z.Zoo [main] Запись от Thu Jul 09 21:10:31 YEKT 2020
+2020-07-09 21:10:31,219 ERROR z.Zoo [main] второй лог
+2020-07-09 21:10:31,221 ERROR E.Enclosure [main] Утка не ест это
+2020-07-09 21:31:47,994 INFO z.Zoo [main] Запись от Thu Jul 09 21:31:47 YEKT 2020
+2020-07-09 21:31:47,999 ERROR z.Zoo [main] второй лог
+2020-07-09 21:31:48,001 ERROR E.Enclosure [main] Утка не ест это
+2020-07-09 21:32:21,058 INFO z.Zoo [main] Запись от Thu Jul 09 21:32:21 YEKT 2020
+2020-07-09 21:32:21,061 ERROR z.Zoo [main] второй лог
+2020-07-09 21:32:21,063 ERROR E.Enclosure [main] Утка не ест это
+2020-07-09 21:33:58,871 INFO z.Zoo [main] Запись от Thu Jul 09 21:33:58 YEKT 2020
+2020-07-09 21:33:58,875 ERROR z.Zoo [main] второй лог
+2020-07-09 21:33:58,877 ERROR E.Enclosure [main] Утка не ест это
+2020-07-09 21:34:26,541 INFO z.Zoo [main] Запись от Thu Jul 09 21:34:26 YEKT 2020
+2020-07-09 21:34:26,544 ERROR z.Zoo [main] второй лог
+2020-07-09 21:34:26,545 ERROR E.Enclosure [main] Утка не ест это
+2020-07-09 21:35:40,753 INFO z.Zoo [main] Запись от Thu Jul 09 21:35:40 YEKT 2020
+2020-07-09 21:35:40,757 ERROR z.Zoo [main] второй лог
+2020-07-09 21:35:40,759 ERROR E.Enclosure [main] Утка не ест это
+2020-07-09 21:37:11,388 INFO z.Zoo [main] Запись от Thu Jul 09 21:37:11 YEKT 2020
+2020-07-09 21:37:11,392 ERROR z.Zoo [main] второй лог
+2020-07-09 21:37:11,396 ERROR E.Enclosure [main] Утка не ест это
+2020-07-09 21:37:25,285 INFO z.Zoo [main] Запись от Thu Jul 09 21:37:25 YEKT 2020
+2020-07-09 21:37:25,288 ERROR z.Zoo [main] второй лог
+2020-07-09 21:37:25,291 ERROR E.Enclosure [main] Утка не ест это
+2020-07-09 21:46:31,213 INFO z.Zoo [main] Запись от Thu Jul 09 21:46:31 YEKT 2020
+2020-07-09 21:46:31,219 ERROR z.Zoo [main] второй лог
+2020-07-09 21:46:31,225 ERROR E.Enclosure [main] Утка не ест это
+2020-07-10 12:34:58,122 INFO z.Zoo [main] Запись от Fri Jul 10 12:34:58 YEKT 2020
+2020-07-10 12:34:58,154 ERROR z.Zoo [main] второй лог
+2020-07-10 12:34:58,160 ERROR E.Enclosure [main] Утка не ест это
+2020-07-10 12:35:15,223 INFO z.Zoo [main] Запись от Fri Jul 10 12:35:15 YEKT 2020
+2020-07-10 12:35:15,227 ERROR z.Zoo [main] второй лог
+2020-07-10 12:35:15,229 ERROR E.Enclosure [main] Утка не ест это

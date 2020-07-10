@@ -5,7 +5,7 @@ import food.Food;
 
 public abstract class Carnivore extends Animal {
 
-    protected Carnivore(String name) {
+    public Carnivore(String name) {
         super(name);
         type = "Хищник";
     }
